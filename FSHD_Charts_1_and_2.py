@@ -1,6 +1,5 @@
 
-"""FSHD Module 2: interpolation + charts 1 and 2 (lecture-inspired percent-change comparisons).
-Run beside Module2_FSHD_Dataset.csv.
+"""FSHD Module 2: interpolation + charts 1 and 2 .
 """
 from pathlib import Path
 import numpy as np
@@ -10,8 +9,6 @@ from scipy import stats
 
 BASE = Path.cwd()
 CSV = next((p for p in (BASE/'Module 2/Module2_FSHD_Dataset.csv', BASE/'Module2_FSHD_Dataset(1).csv') if p.exists()), None)
-if CSV is None:
-    raise FileNotFoundError('Put Module2_FSHD_Dataset.csv in the same folder as this script/notebook.')
 
 df = pd.read_csv(CSV)
 T1 = float(df['lag_months_y1'].min())
